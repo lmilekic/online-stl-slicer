@@ -20,9 +20,9 @@ get '/settings' do
 end
 
 post '/download' do
-  params.to_s
+  puts "params are:" + params.to_s
   command = Thread.new do
-    compile(params["filename"])
+    compile(params["filename"], params["nozzle_diameter"], params["flavor"], params["filament_diameter"], params["extruder_temperature"], params["non_print_travel_speed"], params["layer_height"])
   end
   @download_filename = params["filename"][0..-5] + ".gcode"
   erb :download
@@ -36,8 +36,7 @@ post '/getFile/:filename' do
   end
 end
 
-def compile(filename)
-  cmd = "Slic3r/bin/slic3r ./public/#{filename} --layer-height 0.2 --output ./public/"
+def compile(filename, nozzle_d, flavor, f_diameter, temp, speed, height )
+  cmd = "Slic3r/bin/slic3r ./public/#{filename} --nozzle-diameter #{nozzle_d} --gcode-flavor #{flavor} --filament-diameter #{f_diameter} --temperature #{temp} --travel-speed #{speed} --layer-height #{height} --output ./public/"
   value = `#{cmd}`
-  #send_file "./public/#{filename[0..-5]}.gcode", :filename => "#{filename[0..-5]}.gcode", :type => 'Application/octet-stream'
 end

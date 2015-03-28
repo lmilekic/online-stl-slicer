@@ -1,33 +1,37 @@
 <html>
 <h1> settings </h1>
 
-<form action="/download" method="POST">
-  Nozzle Diameter: <input type="text" name="nozzle_diameter">
+<form class="form-inline" action="/download" method="POST">
+  <label for="nozzle_d">Nozzle Diameter: </label>
+  <input type="text" class="form-control" id="nozzle_d" name="nozzle_diameter" placeholder="0.5">
   <br>
-  Gcode flavor: <input type="radio" name="flavor" value="reprap" checked>Reprap
+  Gcode Flavor:
+  <select class="form-control" name="flavor">
+    <option value="reprap">Reprap</option>
+    <option value="teacup">Teacup</option>
+    <option value="makerware">Makerware</option>
+    <option value="sailfish">Sailfish</option>
+    <option value="mach3">Mach3</option>
+    <option value="no-extrusion">No Extrusion</option>
+  </select>
   <br>
-  <input type="radio" name="flavor" value="teacup">Teacup
+  Filament Diameter:
+  <select class="form-control" name="filament_diameter">
+    <option value="1.75"> 1.75mm </option>
+    <option value="3"> 3mm</option>
+  </select>
   <br>
-  <input type="radio" name="flavor" value="makerware">Makerware
+  <label for="extruder_temp">Extruder Temperature (celcius): </label>
+  <input type="text" class="form-control" id="extruder_temp" name="extruder_temperature" placeholder="200">
   <br>
-  <input type="radio" name="flavor" value="sailfish">Sailfish
+  <label for="travel_speed">travel speed (mm/s): </label>
+  <input type="text" class="form-control" id="travel_speed" name="non_print_travel_speed" placeholder="130">
   <br>
-  <input type="radio" name="flavor" value="mach3">Mach3
-  <br>
-  <input type="radio" name="flavor" value="no-extrusion">No Extrusion
-  <br>
-  Filament Diameter: <input type="radio" name="filament_diameter" value="1.75" checked> 1.75
-  <br>
-  <input type="radio" name="filament_diameter" value="3"> 3
-  <br>
-  Temperature: <input type="text" name="extruder_temperature">
-  <br>
-  Non-print travel speed: <input type="text" name="non_print_travel_speed">
-  <br>
-  Layer height: <input type="text" name="layer_height">
+  <label for="height">Layer height (mm): </label>
+  <input type="text" class="form-control" id="height" name="layer_height" placeholder="0.4">
   <br>
   <input type="hidden" name="filename" value="<%=@filename%>">
-  <input type="submit" value="submit settings">
+  <input class="btn btn-default"type="submit" value="Next step">
 </form>
 
 </html>
