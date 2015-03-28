@@ -1,0 +1,27 @@
+<html>
+<script>
+var timerForLoadingResult=  setInterval(checkServerForFile,1000);//call the fnction in every 1 seconds.write ajax in that function.
+
+function checkServerForFile() {
+  $.ajax({
+    type: "POST",
+    cache: false,
+    url: "/getFile/<%=@download_filename%>",
+    success: function (result) {
+      alert("file is done compiling!");
+      $("#download_link").show();
+      clearInterval(timerForLoadingResult);        // clear timer
+    }
+  });
+}
+
+window.onload = function() {
+  checkServerForFile();
+  $("#download_link").hide();
+};
+</script>
+<a id="download_link" href="/<%=@download_filename%>" download> Download </a>
+
+
+
+</html>

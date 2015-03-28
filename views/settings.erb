@@ -1,0 +1,33 @@
+<html>
+<h1> settings </h1>
+
+<form action="/download" method="POST">
+  Nozzle Diameter: <input type="text" name="nozzle_diameter">
+  <br>
+  Gcode flavor: <input type="radio" name="flavor" value="reprap" checked>Reprap
+  <br>
+  <input type="radio" name="flavor" value="teacup">Teacup
+  <br>
+  <input type="radio" name="flavor" value="makerware">Makerware
+  <br>
+  <input type="radio" name="flavor" value="sailfish">Sailfish
+  <br>
+  <input type="radio" name="flavor" value="mach3">Mach3
+  <br>
+  <input type="radio" name="flavor" value="no-extrusion">No Extrusion
+  <br>
+  Filament Diameter: <input type="radio" name="filament_diameter" value="1.75" checked> 1.75
+  <br>
+  <input type="radio" name="filament_diameter" value="3"> 3
+  <br>
+  Temperature: <input type="text" name="extruder_temperature">
+  <br>
+  Non-print travel speed: <input type="text" name="non_print_travel_speed">
+  <br>
+  Layer height: <input type="text" name="layer_height">
+  <br>
+  <input type="hidden" name="filename" value="<%=@filename%>">
+  <input type="submit" value="submit settings">
+</form>
+
+</html>
