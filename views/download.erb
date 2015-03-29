@@ -1,8 +1,8 @@
 <div class="jumbotron">
-  <h1>Finished!</h1>
+  <h1>Download</h1>
 </div>
 <h3>
-  Your file has finished slicing. Hooray!
+  A link should appear below when your file finishes slicing
 </h3>
 <script>
 var timerForLoadingResult=  setInterval(checkServerForFile,1000);//call the fnction in every 1 seconds.write ajax in that function.
@@ -13,8 +13,8 @@ function checkServerForFile() {
     cache: false,
     url: "/getFile/<%=@download_filename%>",
     success: function (result) {
-      alert("file is done compiling!");
       $("#download_link").show();
+      alert("file is done compiling!");
       clearInterval(timerForLoadingResult);        // clear timer
     }
   });
