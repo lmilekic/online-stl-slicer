@@ -1,17 +1,19 @@
-<head>
-  <title>Stl Upload</title>
-</head>
-<body>
-    <h1>Upload Stl file</h1>
+<div class="jumbotron">
+	<h1>Online STL Slicer</h1>
+</div>
+<h3>
+	Upload a STL file and this will slice it for you
+</h3>
 
-    <form class="form-inline" role="form" action="/file_upload" method="POST" enctype="multipart/form-data">
-      <div class="form-group">
-        <div class="input-group">
-          <label for="exampleInputFile">File input</label>
-          <input type="file" name="file">
-          <p class="help-block">stl, obj and amf files only</p>
-          <input class="btn btn-default"type="submit" value="Next step">
-        </div>
-      </div>
-    </form>
-</body>
+<form class="form-inline" role="form" action="/file_upload" method="POST" enctype="multipart/form-data">
+  <div class="form-group">
+	<div class="input-group">
+	  <label for="exampleInputFile">File input</label>
+	  <input type="file" name="file">
+	  <p class="help-block">stl, obj and amf files only</p>
+	  <input class="btn btn-default"type="submit" value="Next step">
+	</div>
+  </div>
+</form>
+
+

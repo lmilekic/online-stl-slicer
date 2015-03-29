@@ -1,37 +1,42 @@
-<html>
-<h1> settings </h1>
 
-<form class="form-inline" action="/download" method="POST">
-  <label for="nozzle_d">Nozzle Diameter: </label>
-  <input type="text" class="form-control" id="nozzle_d" name="nozzle_diameter" placeholder="0.5">
-  <br>
-  Gcode Flavor:
-  <select class="form-control" name="flavor">
-    <option value="reprap">Reprap</option>
-    <option value="teacup">Teacup</option>
-    <option value="makerware">Makerware</option>
-    <option value="sailfish">Sailfish</option>
-    <option value="mach3">Mach3</option>
-    <option value="no-extrusion">No Extrusion</option>
-  </select>
-  <br>
-  Filament Diameter:
-  <select class="form-control" name="filament_diameter">
-    <option value="1.75"> 1.75mm </option>
-    <option value="3"> 3mm</option>
-  </select>
-  <br>
-  <label for="extruder_temp">Extruder Temperature (celcius): </label>
-  <input type="text" class="form-control" id="extruder_temp" name="extruder_temperature" placeholder="200">
-  <br>
-  <label for="travel_speed">travel speed (mm/s): </label>
-  <input type="text" class="form-control" id="travel_speed" name="non_print_travel_speed" placeholder="130">
-  <br>
-  <label for="height">Layer height (mm): </label>
-  <input type="text" class="form-control" id="height" name="layer_height" placeholder="0.4">
-  <br>
-  <input type="hidden" name="filename" value="<%=@filename%>">
-  <input class="btn btn-default"type="submit" value="Next step">
-</form>
+<div class="jumbotron">
+  <h1>Settings</h1>
+</div>
+<h3>
+  Choose settings for your slicing, then click "next"
+</h3>
 
-</html>
+<div class="well">
+  <form class="form-inline" action="/download" method="POST">
+    <label for="nozzle_d">Nozzle Diameter: </label>
+    <input type="text" class="form-control" id="nozzle_d" name="nozzle_diameter" placeholder="0.5">
+    <br>
+    Gcode Flavor:
+    <select class="form-control" name="flavor">
+  	<option value="reprap">Reprap</option>
+  	<option value="teacup">Teacup</option>
+  	<option value="makerware">Makerware</option>
+  	<option value="sailfish">Sailfish</option>
+  	<option value="mach3">Mach3</option>
+  	<option value="no-extrusion">No Extrusion</option>
+    </select>
+    <br>
+    Filament Diameter:
+    <select class="form-control" name="filament_diameter">
+  	<option value="1.75"> 1.75mm </option>
+  	<option value="3"> 3mm</option>
+    </select>
+    <br>
+    <label for="extruder_temp">Extruder Temperature (celcius): </label>
+    <input type="text" class="form-control" id="extruder_temp" name="extruder_temperature" placeholder="200">
+    <br>
+    <label for="travel_speed">travel speed (mm/s): </label>
+    <input type="text" class="form-control" id="travel_speed" name="non_print_travel_speed" placeholder="130">
+    <br>
+    <label for="height">Layer height (mm): </label>
+    <input type="text" class="form-control" id="height" name="layer_height" placeholder="0.4">
+    <br>
+    <input type="hidden" name="filename" value="<%=@filename%>">
+    <input class="btn btn-default"type="submit" value="Next">
+  </form>
+</div>
