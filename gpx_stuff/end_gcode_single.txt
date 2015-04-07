@@ -1,0 +1,7 @@
+M73 P100 ; end build progress
+G162 X Y F2500; home X and Y axes
+M18; disable all stepper motors
+M109 S0 T0; set bed temperature to 0
+M104 S0 T0; set extruder temperature to 0
+M70 P5; Display "We <3 Making Things!" message
+M72 P1; Play Ta-Da song
