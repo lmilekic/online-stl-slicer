@@ -1,10 +1,10 @@
 require 'sinatra'
 
-get '/' do
+get '/upload' do
   erb :form
 end
 
-get '/index' do
+get '/' do
   erb :index, :layout => false
 end
 
