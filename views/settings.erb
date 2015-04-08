@@ -23,7 +23,7 @@
 <div class="well" >
   <form class="form-inline" action="/download" method="POST">
     <label for="nozzle_d">Nozzle Diameter: </label>
-    <input type="text" class="form-control" id="nozzle_d" name="nozzle_diameter" placeholder="0.5">
+    <input type="text" class="form-control" id="nozzle_d" name="nozzle_diameter" placeholder="0.5" required>
     <br>
     <label>Gcode Flavor:</label>
     <select class="form-control" name="flavor">
@@ -42,13 +42,13 @@
     </select>
     <br>
     <label for="extruder_temp">Extruder Temperature (celcius): </label>
-    <input type="text" class="form-control" id="extruder_temp" name="extruder_temperature" placeholder="200">
+    <input type="text" class="form-control" id="extruder_temp" name="extruder_temperature" placeholder="200" required>
     <br>
     <label for="travel_speed">travel speed (mm/s): </label>
-    <input type="text" class="form-control" id="travel_speed" name="non_print_travel_speed" placeholder="130">
+    <input type="text" class="form-control" id="travel_speed" name="non_print_travel_speed" placeholder="130" required>
     <br>
     <label for="height">Layer height (mm): </label>
-    <input type="text" class="form-control" id="height" name="layer_height" placeholder="0.4">
+    <input type="text" class="form-control" id="height" name="layer_height" placeholder="0.4" required>
     <br>
     <label for="x3g">Gcode or x3g code: </label>
     <select class="form-control" name="x3g">
