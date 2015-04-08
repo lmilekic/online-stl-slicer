@@ -1,9 +1,11 @@
-<div class="jumbotron">
-  <h1>Download</h1>
-</div>
-<h3>
-  A link should appear below when your file finishes slicing
-</h3>
+<div class="row">
+
+        <div class="col-lg-12 text-center v-center">
+
+          <h1>Download</h1>
+          <p class="lead">A link should appear when your file finishes proccessing</p>
+
+
 <script>
 var timerForLoadingResult=  setInterval(checkServerForFile,1000);//call the fnction in every 1 seconds.write ajax in that function.
 
@@ -26,8 +28,9 @@ window.onload = function() {
 };
 </script>
 
-<h3>Download your file here: <a id="download_link" href="/<%=@download_filename%>" download> Download </a></h3>
+<br><br><br>
 
+<h1>Download your file here: <a id="download_link" href="/<%=@download_filename%>" download> Download </a></h1>
 
-
-
+</div>
+</div>
