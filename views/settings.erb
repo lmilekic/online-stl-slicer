@@ -13,18 +13,18 @@
     <br>
     Gcode Flavor:
     <select class="form-control" name="flavor">
-  	<option value="reprap">Reprap</option>
-  	<option value="teacup">Teacup</option>
-  	<option value="makerware">Makerware</option>
-  	<option value="sailfish">Sailfish</option>
-  	<option value="mach3">Mach3</option>
-  	<option value="no-extrusion">No Extrusion</option>
+      <option value="reprap">Reprap</option>
+      <option value="teacup">Teacup</option>
+      <option value="makerware">Makerware</option>
+      <option value="sailfish">Sailfish</option>
+      <option value="mach3">Mach3</option>
+      <option value="no-extrusion">No Extrusion</option>
     </select>
     <br>
     Filament Diameter:
     <select class="form-control" name="filament_diameter">
-  	<option value="1.75"> 1.75mm </option>
-  	<option value="3"> 3mm</option>
+      <option value="1.75"> 1.75mm </option>
+      <option value="3"> 3mm</option>
     </select>
     <br>
     <label for="extruder_temp">Extruder Temperature (celcius): </label>
@@ -35,6 +35,12 @@
     <br>
     <label for="height">Layer height (mm): </label>
     <input type="text" class="form-control" id="height" name="layer_height" placeholder="0.4">
+    <br>
+    Gcode or x3g code:
+    <select class="form-control" name="x3g">
+      <option value="false"> gcode </option>
+      <option value="true"> x3g </option>
+    </select>
     <br>
     <input type="hidden" name="filename" value="<%=@filename%>">
     <input class="btn btn-default"type="submit" value="Next">
