@@ -4,6 +4,10 @@ get '/' do
   erb :form
 end
 
+get '/index' do
+  erb :index, :layout => false
+end
+
 post '/file_upload' do
   @filename = params[:file][:filename].downcase
   file = params[:file][:tempfile]
