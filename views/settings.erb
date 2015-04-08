@@ -1,17 +1,31 @@
 
-<div class="jumbotron">
-  <h1>Settings</h1>
-</div>
-<h3>
-  Choose settings for your slicing, then click "next"
-</h3>
+      <div class="row">
+       
+        <div class="col-lg-12 text-center v-center">
+          
+          <h1>Settings</h1>
+          <p class="lead">Pick Your settings</p>
 
-<div class="well">
+       
+          
+        </div>
+
+       
+        
+   
+</div> <!-- /row -->
+
+
+ <div class="row">
+  <div class="col-xs-3"> 
+  </div>
+  <div class="col-xs-6"> 
+<div class="well" >
   <form class="form-inline" action="/download" method="POST">
     <label for="nozzle_d">Nozzle Diameter: </label>
     <input type="text" class="form-control" id="nozzle_d" name="nozzle_diameter" placeholder="0.5">
     <br>
-    Gcode Flavor:
+    <label>Gcode Flavor:</label>
     <select class="form-control" name="flavor">
   	<option value="reprap">Reprap</option>
   	<option value="teacup">Teacup</option>
@@ -21,7 +35,7 @@
   	<option value="no-extrusion">No Extrusion</option>
     </select>
     <br>
-    Filament Diameter:
+    <label>Filament Diameter:</label>
     <select class="form-control" name="filament_diameter">
   	<option value="1.75"> 1.75mm </option>
   	<option value="3"> 3mm</option>
@@ -39,4 +53,8 @@
     <input type="hidden" name="filename" value="<%=@filename%>">
     <input class="btn btn-default"type="submit" value="Next">
   </form>
+</div>
+
+</div>
+
 </div>
