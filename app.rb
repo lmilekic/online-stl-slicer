@@ -58,7 +58,7 @@ def compile(filename, nozzle_d, flavor, f_diameter, temp, speed, height, x3g )
 end
 
 def run_GPX(filename)
-  cmd = "gpx_stuff/GPX/gpx -g ./public/#{filename}"
+  cmd = "gpx_stuff/newGPX/gpx -g ./public/#{filename}"
   puts "COMPILING X3G CODE"
   value = `#{cmd}`
 end
