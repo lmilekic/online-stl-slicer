@@ -50,7 +50,7 @@ private
 def compile(filename, nozzle_d, flavor, f_diameter, temp, speed, height, x3g )
   cmd = "Slic3r/bin/slic3r ./public/#{filename} --nozzle-diameter #{nozzle_d} --gcode-flavor #{flavor} --filament-diameter #{f_diameter} --temperature #{temp} --travel-speed #{speed} --layer-height #{height} "
   if(true) #test to see if changing center works nicer
-    cmd += "--print-center 40,40 "
+    cmd += "--print-center 0,0 "
   end
   if(x3g)
     cmd += "--start-gcode gpx_stuff/start_gcode_single.txt --end-gcode gpx_stuff/end_gcode_single.txt "
