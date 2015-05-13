@@ -25,7 +25,7 @@ end
 
 post '/download' do
   command = Thread.new do
-    compile(params["filename"], params["nozzle_diameter"], params["flavor"], params["filament_diameter"], params["extruder_temperature"], params["non_print_travel_speed"], params["layer_height"], params["x3g"])
+    compile(params["filename"], params["nozzle_diameter"], params["flavor"], params["filament_diameter"], params["extruder_temperature"], params["non_print_travel_speed"], params["layer_height"], params["x3g"], params["extruder"])
     if(params["x3g"] == "true") #we're going to have to run GPX
       run_GPX(params["filename"][0..-5] + ".gcode")
     end
@@ -47,19 +47,23 @@ post '/getFile/:filename' do
 end
 private
 
-def compile(filename, nozzle_d, flavor, f_diameter, temp, speed, height, x3g )
+def compile(filename, nozzle_d, flavor, f_diameter, temp, speed, height, x3g, extruder )
   cmd = "Slic3r/bin/slic3r ./public/#{filename} --nozzle-diameter #{nozzle_d} --gcode-flavor #{flavor} --filament-diameter #{f_diameter} --temperature #{temp} --travel-speed #{speed} --layer-height #{height} "
   if(true) #test to see if changing center works nicer
     cmd += "--print-center 0,0 "
   end
   if(x3g)
-    cmd += "--start-gcode gpx_stuff/start_gcode_single.txt --end-gcode gpx_stuff/end_gcode_single.txt "
+    if(extruder == "right")
+      cmd += "--start-gcode gpx_stuff/start_gcode_single.txt --end-gcode gpx_stuff/end_gcode_single.txt "
+    else
+      cmd += "--start-gcode gpx_stuff/start_gcode_left.txt --end-gcode gpx_stuff/end_gcode_left.txt "
+    end
   end
   cmd += "--output ./public/"
   value = `#{cmd}`
 end
 
 def run_GPX(filename)
-  cmd = "gpx_stuff/newGPX/gpx -g ./public/#{filename}"
+  cmd = "gpx_stuff/newGPX/gpx -g -p -m r1d ./public/#{filename}"
   value = `#{cmd}`
 end
