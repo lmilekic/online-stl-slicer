@@ -27,7 +27,9 @@ post '/download' do
   command = Thread.new do
     compile(params["filename"], params["nozzle_diameter"], params["flavor"], params["filament_diameter"], params["extruder_temperature"], params["non_print_travel_speed"], params["layer_height"], params["x3g"], params["extruder"])
     if(params["x3g"] == "true") #we're going to have to run GPX
+      puts "**************************** STARTING GPX************************"
       run_GPX(params["filename"][0..-5] + ".gcode")
+      puts "***************************** FINISHED GPX **********************"
     end
   end
   if(params["x3g"] == "true")
@@ -52,6 +54,7 @@ def compile(filename, nozzle_d, flavor, f_diameter, temp, speed, height, x3g, ex
   if(true) #test to see if changing center works nicer
     cmd += "--print-center 0,0 "
   end
+  #if extruder is right then do some different variation of temp
   if(x3g)
     if(extruder == "right")
       cmd += "--start-gcode gpx_stuff/start_gcode_single.txt --end-gcode gpx_stuff/end_gcode_single.txt "
